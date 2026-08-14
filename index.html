@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehmet Altuğ Altınışık — Architect</title>
+  <meta name="description" content="Architecture portfolio of Mehmet Altuğ Altınışık. Bold designs rooted in context, materiality, and spatial experience.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FB7F33'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='bold' fill='%23fff' text-anchor='middle'%3EMA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Intro Curtain -->
+  <div class="curtain" id="curtain">
+    <video class="curtain__video" muted playsinline webkit-playsinline preload="auto">
+      <source src="assets/bisiklet_animation.mp4" type="video/mp4">
+    </video>
+    <!-- Scroll hint -->
+    <div class="curtain__hint" id="curtainHint">
+      <div class="curtain__hint-arrow">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__character" id="heroCharacter">
+      <!-- 3D Character Video -->
+      <div class="hero__video-wrap">
+        <video class="hero__video" autoplay muted loop playsinline webkit-playsinline>
+          <source src="assets/hero-character.mp4" data-desktop="assets/hero-character.mp4" data-mobile="assets/hero-character-mobile.mp4" type="video/mp4">
+        </video>
+        <script>
+          (function() {
+            var source = document.querySelector('.hero__video source');
+            if (window.innerWidth <= 768) {
+              source.setAttribute('src', source.getAttribute('data-mobile'));
+              source.parentElement.load();
+            }
+          })();
+        </script>
+
+        <!-- Left orb hotspot — About Me -->
+        <a href="about.html" class="hero__orb hero__orb--left" id="artifactAbout">
+          <div class="hero__orb-ring"></div>
+          <span class="hero__orb-label">About Me</span>
+        </a>
+
+        <!-- Right orb hotspot — Projects -->
+        <a href="projects.html" class="hero__orb hero__orb--right" id="artifactProjects">
+          <div class="hero__orb-ring"></div>
+          <span class="hero__orb-label">Projects</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Name below the character -->
+    <div class="hero__name">
+      <h1 class="hero__title">
+        <span class="hero__title-line">Mehmet Altuğ</span>
+        <span class="hero__title-line hero__title-line--accent">Altınışık</span>
+      </h1>
+      <p class="hero__subtitle">Architect</p>
+    </div>
+  </section>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/bg-music.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-toggle" id="musicToggle" title="Play Music">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path class="music-icon-off" d="M11 5L6 9H2v6h4l5 4V5z M23 9l-6 6 M17 9l6 6"/>
+      <path class="music-icon-on" d="M11 5L6 9H2v6h4l5 4V5z M15.54 8.46a5 5 0 010 7.07 M19.07 4.93a10 10 0 010 14.14" style="display:none"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
