@@ -13,14 +13,14 @@
   --color-bg-alt: #F0F4F4;
   --color-text: #22262B;
   --color-text-muted: #71797A;
-  --color-accent: #0E8378;
-  --color-accent-hover: #14988B;
+  --color-accent: #12A090;
+  --color-accent-hover: #0E8378;
   --color-card-bg: #E7EFEE;
   --color-border: #DCE4E3;
 
-  --color-orange: #0E8378;
-  --color-yellow: #0E8378;
-  --color-turquoise: #0E8378;
+  --color-orange: #12A090;
+  --color-yellow: #12A090;
+  --color-turquoise: #12A090;
   --color-green: #22262B;
   --color-purple: #71797A;
 
@@ -1102,34 +1102,41 @@ body.curtain-active .nav {
     padding: 0 var(--space-sm);
   }
 
+  /* Mobile: no rings — stationary pill buttons resting on the character's hands */
   .hero__orb {
-    width: 14%;
+    width: auto;
+    aspect-ratio: auto;
   }
 
   .hero__orb--left {
-    left: 30%;
-    top: 48%;
+    left: 24%;
+    top: 49%;
   }
 
   .hero__orb--right {
-    left: 85%;
-    top: 46%;
+    left: 86%;
+    top: 50%;
+  }
+
+  .hero__orb-ring {
+    display: none;
   }
 
   .hero__orb-label {
-    font-size: 0.6rem;
-    bottom: -22px;
-    /* No hover on mobile — always show labels */
+    position: static;
+    transform: none;
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  /* Always show orb ring on mobile so users know to tap */
-  .hero__orb-ring {
-    border-color: rgba(255, 255, 255, 0.55);
-    box-shadow:
-      0 0 15px rgba(255, 255, 255, 0.3),
-      inset 0 0 10px rgba(255, 255, 255, 0.1);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    background: rgba(15, 18, 20, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    padding: 0.55rem 0.9rem;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    text-shadow: none;
+    white-space: nowrap;
   }
 
   .about__grid {
