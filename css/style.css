@@ -9,20 +9,20 @@
    CSS Custom Properties
    =========================== */
 :root {
-  --color-bg: #ffffff;
-  --color-bg-alt: #f7f7f2;
-  --color-text: #4B5320;
-  --color-text-muted: #7a7e6a;
-  --color-accent: #FB7F33;
-  --color-accent-hover: #ff9555;
-  --color-card-bg: #f0efe8;
-  --color-border: #e0dfd5;
+  --color-bg: #FBFCFC;
+  --color-bg-alt: #F1F3F4;
+  --color-text: #22262B;
+  --color-text-muted: #737A80;
+  --color-accent: #44576D;
+  --color-accent-hover: #5A7089;
+  --color-card-bg: #E9EDEF;
+  --color-border: #DDE2E5;
 
-  --color-orange: #FB7F33;
-  --color-yellow: #FFED00;
-  --color-turquoise: #40E0D0;
-  --color-green: #4B5320;
-  --color-purple: #8332AC;
+  --color-orange: #44576D;
+  --color-yellow: #44576D;
+  --color-turquoise: #44576D;
+  --color-green: #22262B;
+  --color-purple: #737A80;
 
   --font-heading: 'Studio 6', 'Space Grotesk', sans-serif;
   --font-body: 'Studio 6', 'Inter', sans-serif;
@@ -136,8 +136,8 @@ img {
   display: block;
   width: 10px;
   height: 10px;
-  border-right: 2px solid var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
+  border-right: 2px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
   transform: rotate(45deg);
   opacity: 0.6;
 }
@@ -179,8 +179,8 @@ body.hero-locked {
   right: 20px;
   z-index: 99999;
   background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(64, 224, 208, 0.4);
-  color: #40E0D0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -204,8 +204,8 @@ body.hero-locked {
 }
 
 .music-toggle.playing {
-  border-color: rgba(64, 224, 208, 0.8);
-  box-shadow: 0 0 12px rgba(64, 224, 208, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 /* Hide nav while curtain is showing */
@@ -451,11 +451,11 @@ body.curtain-active .nav {
 }
 
 .hero__orb:hover .hero__orb-ring {
-  border-color: #40E0D0;
+  border-color: rgba(255, 255, 255, 0.9);
   box-shadow:
-    0 0 20px rgba(64, 224, 208, 0.4),
-    0 0 40px rgba(64, 224, 208, 0.2),
-    inset 0 0 20px rgba(64, 224, 208, 0.1);
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 /* Label that appears on hover */
@@ -469,11 +469,11 @@ body.curtain-active .nav {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #40E0D0;
+  color: #ffffff;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateX(-50%) translateY(4px);
-  text-shadow: 0 0 10px rgba(64, 224, 208, 0.8);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
 
 .hero__orb:hover .hero__orb-label {
@@ -667,7 +667,7 @@ body.curtain-active .nav {
 .project-card__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(75, 83, 32, 0.7);
+  background: rgba(34, 38, 43, 0.72);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1126,10 +1126,10 @@ body.curtain-active .nav {
 
   /* Always show orb ring on mobile so users know to tap */
   .hero__orb-ring {
-    border-color: rgba(64, 224, 208, 0.5);
+    border-color: rgba(255, 255, 255, 0.55);
     box-shadow:
-      0 0 15px rgba(64, 224, 208, 0.3),
-      inset 0 0 10px rgba(64, 224, 208, 0.1);
+      0 0 15px rgba(255, 255, 255, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
   }
 
   .about__grid {
