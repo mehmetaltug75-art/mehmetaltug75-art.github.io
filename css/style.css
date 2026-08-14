@@ -1110,12 +1110,12 @@ body.curtain-active .nav {
 
   .hero__orb--left {
     left: 24%;
-    top: 49%;
+    top: 54%;
   }
 
   .hero__orb--right {
     left: 86%;
-    top: 50%;
+    top: 55%;
   }
 
   .hero__orb-ring {
@@ -1129,8 +1129,8 @@ body.curtain-active .nav {
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     color: #ffffff;
-    background: rgba(15, 18, 20, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(18, 160, 144, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 999px;
     padding: 0.55rem 0.9rem;
     -webkit-backdrop-filter: blur(8px);
