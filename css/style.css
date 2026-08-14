@@ -10,19 +10,19 @@
    =========================== */
 :root {
   --color-bg: #FBFCFC;
-  --color-bg-alt: #F1F3F4;
+  --color-bg-alt: #F0F4F4;
   --color-text: #22262B;
-  --color-text-muted: #737A80;
-  --color-accent: #44576D;
-  --color-accent-hover: #5A7089;
-  --color-card-bg: #E9EDEF;
-  --color-border: #DDE2E5;
+  --color-text-muted: #71797A;
+  --color-accent: #0E8378;
+  --color-accent-hover: #14988B;
+  --color-card-bg: #E7EFEE;
+  --color-border: #DCE4E3;
 
-  --color-orange: #44576D;
-  --color-yellow: #44576D;
-  --color-turquoise: #44576D;
+  --color-orange: #0E8378;
+  --color-yellow: #0E8378;
+  --color-turquoise: #0E8378;
   --color-green: #22262B;
-  --color-purple: #737A80;
+  --color-purple: #71797A;
 
   --font-heading: 'Studio 6', 'Space Grotesk', sans-serif;
   --font-body: 'Studio 6', 'Inter', sans-serif;
