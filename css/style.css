@@ -414,25 +414,25 @@ body.curtain-active .nav {
   justify-content: center;
   cursor: pointer;
   text-decoration: none;
-  width: 12%;
-  aspect-ratio: 1;
-  border-radius: 50%;
+  width: auto;
+  aspect-ratio: auto;
+  border-radius: 999px;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease;
 }
 
 .hero__orb--left {
-  left: 50%;
-  top: 36%;
+  left: 42%;
+  top: 48%;
 }
 
 .hero__orb--right {
-  left: 84%;
-  top: 38%;
+  left: 78%;
+  top: 48%;
 }
 
 .hero__orb:hover {
-  transform: translate(-50%, -50%) scale(1.15);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .hero__orb:active {
@@ -440,44 +440,34 @@ body.curtain-active .nav {
   transition-duration: 0.1s;
 }
 
-/* Ring that appears on hover */
+/* Visible pill button — no ring */
 .hero__orb-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: none;
 }
 
-.hero__orb:hover .hero__orb-ring {
-  border-color: var(--color-accent);
-  box-shadow:
-    0 0 20px rgba(18, 160, 144, 0.5),
-    0 0 40px rgba(18, 160, 144, 0.3),
-    inset 0 0 20px rgba(18, 160, 144, 0.15);
-}
-
-/* Label that appears on hover */
 .hero__orb-label {
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  transform: none;
   white-space: nowrap;
   font-family: var(--font-heading);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #ffffff;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateX(-50%) translateY(4px);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  opacity: 1;
+  text-shadow: none;
+  background: rgba(18, 160, 144, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero__orb:hover .hero__orb-label {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  background: var(--color-accent);
+  transform: scale(1.05);
 }
 
 /* ─── Name below character ─── */
