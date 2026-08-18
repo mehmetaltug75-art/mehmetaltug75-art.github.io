@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mehmetaltug75-art.github.io/sitemap.xml
