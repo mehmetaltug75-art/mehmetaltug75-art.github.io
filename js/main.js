@@ -209,11 +209,16 @@
   document.addEventListener('touchmove', preventScroll, { passive: false });
 
   // Mouse wheel — block native scroll + drive video
+  // Clamp delta so fast scrolling does not jump the video past frames
   window.addEventListener('wheel', function (e) {
     if (!curtainOpen) {
       e.preventDefault();
       unlockVideo();
-      updateVideo(e.deltaY > 0 ? Math.abs(e.deltaY) : -Math.abs(e.deltaY));
+      var maxDelta = 80;
+      var delta = e.deltaY > 0
+        ? Math.min(Math.abs(e.deltaY), maxDelta)
+        : -Math.min(Math.abs(e.deltaY), maxDelta);
+      updateVideo(delta);
     }
     startMusic();
   }, { passive: false });
@@ -237,7 +242,11 @@
     var currentY = e.touches[0].clientY;
     var delta = lastTouchY - currentY; // positive = swipe up = forward
     lastTouchY = currentY;
-    updateVideo(delta * 3);
+    var scaled = delta * 3;
+    var maxDelta = 80;
+    if (scaled > maxDelta) scaled = maxDelta;
+    if (scaled < -maxDelta) scaled = -maxDelta;
+    updateVideo(scaled);
   }, { passive: true });
 
   window.addEventListener('touchend', function () {
