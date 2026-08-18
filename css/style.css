@@ -135,10 +135,10 @@ img {
   display: block;
   width: 10px;
   height: 10px;
-  border-right: 2px solid rgba(255, 255, 255, 0.85);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+  border-right: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
   transform: rotate(45deg);
-  opacity: 0.6;
+  opacity: 0.85;
 }
 
 .curtain__hint-arrow span:first-child {
@@ -1421,8 +1421,9 @@ body.curtain-active .nav {
 
 body.gallery-page {
   background-color: #000000;
-  background-image: radial-gradient(circle, #333333 2px, transparent 2px);
-  background-size: 70px 70px;
+  background-image: radial-gradient(circle, rgba(204, 204, 204, 0.28) 2px, transparent 2px);
+  background-size: 65px 65px;
+  background-attachment: fixed;
   color: #ffffff;
   min-height: 100vh;
   margin: 0;
@@ -1438,7 +1439,7 @@ body.gallery-page .nav {
   position: relative;
   width: 100%;
   min-height: 260vh;
-  background: #000000;
+  background: transparent;
   padding: 4vh 0;
 }
 

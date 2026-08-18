@@ -209,13 +209,15 @@
   document.addEventListener('touchmove', preventScroll, { passive: false });
 
   // Mouse wheel — block native scroll + drive video
-  // Clamp delta so fast scrolling does not jump the video past frames
+  // Clamp delta so fast scrolling does not jump the video past frames.
+  // On desktop, scrolling UP (wheel up / negative deltaY) advances forward
+  // to match the mobile swipe-up gesture.
   window.addEventListener('wheel', function (e) {
     if (!curtainOpen) {
       e.preventDefault();
       unlockVideo();
       var maxDelta = 80;
-      var delta = e.deltaY > 0
+      var delta = e.deltaY < 0
         ? Math.min(Math.abs(e.deltaY), maxDelta)
         : -Math.min(Math.abs(e.deltaY), maxDelta);
       updateVideo(delta);
@@ -260,7 +262,7 @@
     if (!curtainOpen && ['ArrowDown', 'ArrowUp', 'Space', 'Enter'].includes(e.code)) {
       e.preventDefault();
       unlockVideo();
-      if (e.code === 'ArrowUp') {
+      if (e.code === 'ArrowDown') {
         updateVideo(-80);
       } else {
         updateVideo(80);
