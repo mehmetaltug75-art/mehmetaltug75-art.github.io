@@ -32,11 +32,13 @@
     if (playing) {
       musicBtn.classList.add('playing');
       musicBtn.title = 'Pause Music';
+      musicBtn.setAttribute('aria-label', 'Pause background music');
       iconOff.style.display = 'none';
       iconOn.style.display = '';
     } else {
       musicBtn.classList.remove('playing');
       musicBtn.title = 'Play Music';
+      musicBtn.setAttribute('aria-label', 'Play background music');
       iconOff.style.display = '';
       iconOn.style.display = 'none';
     }
