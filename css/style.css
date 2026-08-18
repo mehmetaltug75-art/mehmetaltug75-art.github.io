@@ -129,7 +129,6 @@ img {
   align-items: center;
   gap: 4px;
   animation: hintBounce 1.5s ease-in-out infinite;
-  transform: rotate(180deg);
 }
 
 .curtain__hint-arrow span {
@@ -147,8 +146,8 @@ img {
 }
 
 @keyframes hintBounce {
-  0%, 100% { transform: rotate(180deg) translateY(0); }
-  50% { transform: rotate(180deg) translateY(6px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 @keyframes hintFadeIn {
@@ -695,6 +694,11 @@ body.curtain-active .nav {
   color: #ffffff;
 }
 
+.project-card__view:active {
+  transform: scale(0.96);
+  transition-duration: 0.1s;
+}
+
 .project-card__info {
   padding: var(--space-sm) 0;
 }
@@ -727,7 +731,7 @@ body.curtain-active .nav {
 
 .contact__container {
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto;
   text-align: center;
 }
 
@@ -812,9 +816,9 @@ body.curtain-active .nav {
 
 /* Footer */
 .footer {
-  position: absolute;
-  bottom: var(--space-md);
-  left: 0;
+  position: relative;
+  margin-top: auto;
+  padding-top: var(--space-lg);
   width: 100%;
   text-align: center;
   font-size: 0.75rem;

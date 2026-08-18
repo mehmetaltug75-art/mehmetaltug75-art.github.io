@@ -16,17 +16,19 @@
   <!-- Navigation -->
   <nav class="nav nav--scrolled" id="nav">
     <a href="index.html" class="nav__logo">MAA</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <ul class="nav__links" id="navLinks">
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html" class="nav__link--active">Portfolio</a></li>
+      <li><a href="projects.html" class="nav__link--active" aria-current="page">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <main>
 
   <!-- Portfolio Section -->
   <section class="portfolio portfolio--page" id="portfolio">
@@ -40,7 +42,7 @@
         <!-- Project 01: Venaria Reale -->
         <article class="project-card project-card--wide reveal">
           <div class="project-card__image">
-            <img src="assets/projects/project-01-venaria.jpg" alt="Architectural and Urban Legacy Design Studio">
+            <img src="assets/projects/project-01-venaria.jpg" loading="lazy" decoding="async" alt="Architectural and Urban Legacy Design Studio">
             <div class="project-card__overlay">
               <a href="assets/portfolio-booklet.pdf" target="_blank" class="project-card__view">View Project</a>
             </div>
@@ -55,7 +57,7 @@
         <!-- Project 02: Kiruna -->
         <article class="project-card project-card--wide reveal">
           <div class="project-card__image">
-            <img src="assets/projects/project-02-kiruna.jpg" alt="Architecture Design Theory - Kiruna">
+            <img src="assets/projects/project-02-kiruna.jpg" loading="lazy" decoding="async" alt="Architecture Design Theory - Kiruna">
             <div class="project-card__overlay">
               <a href="assets/portfolio-booklet.pdf" target="_blank" class="project-card__view">View Project</a>
             </div>
@@ -70,7 +72,7 @@
         <!-- Project 03: BCS Mallorca -->
         <article class="project-card project-card--wide reveal">
           <div class="project-card__image">
-            <img src="assets/projects/project-03-bcs.jpg" alt="Building Construction Studio - Mallorca">
+            <img src="assets/projects/project-03-bcs.jpg" loading="lazy" decoding="async" alt="Building Construction Studio - Mallorca">
             <div class="project-card__overlay">
               <a href="assets/portfolio-booklet.pdf" target="_blank" class="project-card__view">View Project</a>
             </div>
@@ -85,7 +87,7 @@
         <!-- Project 04: Professional Training -->
         <article class="project-card project-card--wide reveal">
           <div class="project-card__image">
-            <img src="assets/projects/project-04-training.jpg" alt="Professional Training">
+            <img src="assets/projects/project-04-training.jpg" loading="lazy" decoding="async" alt="Professional Training">
             <div class="project-card__overlay">
               <a href="assets/portfolio-booklet.pdf" target="_blank" class="project-card__view">View Project</a>
             </div>
@@ -127,6 +129,8 @@
       <p>&copy; 2026 Mehmet Altuğ Altınışık. All rights reserved.</p>
     </footer>
   </section>
+
+  </main>
 
   <script src="js/pages.js"></script>
 </body>

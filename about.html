@@ -16,17 +16,19 @@
   <!-- Navigation -->
   <nav class="nav nav--scrolled" id="nav">
     <a href="index.html" class="nav__logo">MAA</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <ul class="nav__links" id="navLinks">
-      <li><a href="about.html" class="nav__link--active">About</a></li>
+      <li><a href="about.html" class="nav__link--active" aria-current="page">About</a></li>
       <li><a href="projects.html">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <main>
 
   <!-- About Section -->
   <section class="about about--page" id="about">
@@ -37,7 +39,7 @@
       </div>
       <div class="about__grid">
         <div class="about__photo reveal">
-          <img src="assets/profile-photo.jpg" alt="Mehmet Altuğ Altınışık at his graduation from Politecnico di Torino, wearing the laurel wreath">
+          <img src="assets/profile-photo.jpg" loading="lazy" decoding="async" alt="Mehmet Altuğ Altınışık at his graduation from Politecnico di Torino, wearing the laurel wreath">
         </div>
         <div class="about__text reveal">
           <p class="about__bio">
@@ -197,6 +199,8 @@
       <p>&copy; 2026 Mehmet Altuğ Altınışık. All rights reserved.</p>
     </footer>
   </section>
+
+  </main>
 
   <script src="js/pages.js"></script>
 </body>

@@ -26,18 +26,36 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
+  function setMenuOpen(open) {
+    navToggle.classList.toggle('nav__toggle--active', open);
+    navLinks.classList.toggle('nav__links--open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
   navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('nav__toggle--active');
-    navLinks.classList.toggle('nav__links--open');
-    document.body.style.overflow = navLinks.classList.contains('nav__links--open') ? 'hidden' : '';
+    setMenuOpen(!navLinks.classList.contains('nav__links--open'));
   });
 
   navLinks.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('nav__toggle--active');
-      navLinks.classList.remove('nav__links--open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  // Close on Escape or clicking outside the menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('nav__links--open')) {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (
+      navLinks.classList.contains('nav__links--open') &&
+      !navLinks.contains(e.target) &&
+      !navToggle.contains(e.target)
+    ) {
+      setMenuOpen(false);
+    }
   });
 
   // ─── Smooth scroll for in-page anchor links ───

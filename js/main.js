@@ -28,21 +28,31 @@
      ============================================= */
   var userStoppedMusic = false;
 
+  function updateMusicButtonState(playing) {
+    if (playing) {
+      musicBtn.classList.add('playing');
+      musicBtn.title = 'Pause Music';
+      iconOff.style.display = 'none';
+      iconOn.style.display = '';
+    } else {
+      musicBtn.classList.remove('playing');
+      musicBtn.title = 'Play Music';
+      iconOff.style.display = '';
+      iconOn.style.display = 'none';
+    }
+  }
+
   function toggleMusic() {
     if (musicPlaying) {
       bgMusic.pause();
       musicPlaying = false;
       userStoppedMusic = true; // User chose to stop — don't auto-restart
-      musicBtn.classList.remove('playing');
-      iconOff.style.display = '';
-      iconOn.style.display = 'none';
+      updateMusicButtonState(false);
     } else {
       userStoppedMusic = false;
       bgMusic.play().then(function () {
         musicPlaying = true;
-        musicBtn.classList.add('playing');
-        iconOff.style.display = 'none';
-        iconOn.style.display = '';
+        updateMusicButtonState(true);
       }).catch(function () {});
     }
   }
@@ -53,9 +63,7 @@
     if (musicPlaying || userStoppedMusic) return;
     bgMusic.play().then(function () {
       musicPlaying = true;
-      musicBtn.classList.add('playing');
-      iconOff.style.display = 'none';
-      iconOn.style.display = '';
+      updateMusicButtonState(true);
     }).catch(function () {});
   }
 
