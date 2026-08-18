@@ -422,7 +422,7 @@ body.curtain-active .nav {
 }
 
 .hero__orb--left {
-  left: 62.9%;
+  left: 50%;
   top: 36%;
 }
 
@@ -450,11 +450,11 @@ body.curtain-active .nav {
 }
 
 .hero__orb:hover .hero__orb-ring {
-  border-color: rgba(255, 255, 255, 0.9);
+  border-color: var(--color-accent);
   box-shadow:
-    0 0 20px rgba(255, 255, 255, 0.4),
-    0 0 40px rgba(255, 255, 255, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.1);
+    0 0 20px rgba(18, 160, 144, 0.5),
+    0 0 40px rgba(18, 160, 144, 0.3),
+    inset 0 0 20px rgba(18, 160, 144, 0.15);
 }
 
 /* Label that appears on hover */
