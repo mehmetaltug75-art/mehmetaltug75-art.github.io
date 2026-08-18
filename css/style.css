@@ -1323,6 +1323,15 @@ body.curtain-active .nav {
   .hero__orb:active {
     transform: translate(-50%, -50%);
   }
+
+  /* Gallery: keep scatter rotation, drop scale/shadow transitions */
+  .scatter-gallery__photo,
+  .scatter-gallery__photo:hover,
+  .scatter-gallery__photo:focus-visible {
+    transition: none;
+    transform: translate(-50%, -50%) rotate(var(--r));
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+  }
 }
 
 /* ===========================
