@@ -243,6 +243,7 @@ body.curtain-active .nav {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s var(--ease-spring), transform 0.6s var(--ease-spring);
+  will-change: transform, opacity;
 }
 
 .reveal--visible {
@@ -386,6 +387,7 @@ body.curtain-active .nav {
   inset: 0;
   opacity: 0;
   transition: opacity 1s ease 0.8s;
+  will-change: opacity;
 }
 
 .hero--revealed .hero__character {
@@ -479,6 +481,7 @@ body.curtain-active .nav {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease 1.2s, transform 1s ease 1.2s;
+  will-change: transform, opacity;
 }
 
 .hero--revealed .hero__name {
@@ -522,6 +525,8 @@ body.curtain-active .nav {
 .about {
   padding: var(--space-xl) var(--space-md);
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 .about--page {
@@ -618,6 +623,8 @@ body.curtain-active .nav {
 .portfolio {
   padding: var(--space-xl) var(--space-md);
   background-color: var(--color-bg-alt);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 .portfolio--page {
@@ -735,6 +742,13 @@ body.curtain-active .nav {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+.contact--page {
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+  min-height: 100vh;
 }
 
 .contact__container {
@@ -833,11 +847,18 @@ body.curtain-active .nav {
   color: var(--color-text-muted);
 }
 
+.footer--gallery {
+  color: rgba(255, 255, 255, 0.45);
+  background: #000000;
+}
+
 /* ===========================
    CV Sections (About page)
    =========================== */
 .cv-section {
   padding: var(--space-xl) 0;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 .cv-section--alt {
@@ -1110,26 +1131,6 @@ body.curtain-active .nav {
   margin-bottom: var(--space-md);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   background: var(--color-bg);
-}
-
-/* Back link on gallery page (nav is hidden there) */
-.gallery-back {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 100;
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.gallery-back:hover {
-  color: var(--color-accent);
 }
 
 /* ===========================
@@ -1430,17 +1431,12 @@ body.gallery-page {
   overflow-x: hidden;
 }
 
-/* Hide site nav on gallery page */
-body.gallery-page .nav {
-  display: none;
-}
-
 .scatter-gallery {
   position: relative;
   width: 100%;
   min-height: 260vh;
   background: transparent;
-  padding: 4vh 0;
+  padding: calc(var(--nav-height) + 4vh) 0 4vh;
 }
 
 /* Photo "prints" */
@@ -1540,9 +1536,12 @@ body.gallery-page .nav {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.lightbox__close:active,
-.lightbox__nav:active {
+.lightbox__close:active {
   transform: scale(0.94);
+}
+
+.lightbox__nav:active {
+  transform: translateY(-50%) scale(0.94);
 }
 
 .lightbox__close {
@@ -1583,7 +1582,7 @@ body.gallery-page .nav {
     align-items: center;
     gap: 12px;
     min-height: auto;
-    padding: 24px 16px;
+    padding: calc(var(--nav-height) + 16px) 16px 24px;
   }
 
   .scatter-gallery__photo {

@@ -20,8 +20,21 @@
 </head>
 <body class="gallery-page">
 
-  <!-- Back to portfolio -->
-  <a href="projects.html" class="gallery-back" aria-label="Back to portfolio">← Portfolio</a>
+  <!-- Navigation -->
+  <nav class="nav nav--scrolled" id="nav">
+    <a href="index.html" class="nav__logo">MAA</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Portfolio</a></li>
+      <li><a href="gallery.html" class="nav__link--active" aria-current="page">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Scatter gallery — positions are fixed, not random on reload -->
   <main class="scatter-gallery" id="scatterGallery">
@@ -102,6 +115,11 @@
     </div>
   </div>
 
+  <footer class="footer footer--gallery">
+    <p>&copy; 2026 Mehmet Altuğ Altınışık. All rights reserved.</p>
+  </footer>
+
+  <script src="js/pages.js"></script>
   <script src="js/gallery.js"></script>
 </body>
 </html>
