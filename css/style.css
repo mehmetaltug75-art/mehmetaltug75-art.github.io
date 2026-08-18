@@ -422,13 +422,13 @@ body.curtain-active .nav {
 }
 
 .hero__orb--left {
-  left: 42%;
-  top: 48%;
+  left: 55%;
+  top: 55%;
 }
 
 .hero__orb--right {
-  left: 78%;
-  top: 48%;
+  left: 82%;
+  top: 55%;
 }
 
 .hero__orb:hover {
