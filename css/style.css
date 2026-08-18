@@ -1008,7 +1008,7 @@ body.curtain-active .nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) calc(var(--space-xl) + 4rem);
   text-align: center;
 }
 
