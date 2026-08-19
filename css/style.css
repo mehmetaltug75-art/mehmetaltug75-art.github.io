@@ -137,7 +137,7 @@ img {
   height: 10px;
   border-right: 2px solid var(--color-accent);
   border-bottom: 2px solid var(--color-accent);
-  transform: rotate(45deg);
+  transform: rotate(-135deg);
   opacity: 0.85;
 }
 
@@ -147,7 +147,7 @@ img {
 
 @keyframes hintBounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes hintFadeIn {

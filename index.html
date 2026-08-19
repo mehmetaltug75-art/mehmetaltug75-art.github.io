@@ -25,9 +25,18 @@
 
   <!-- Intro Curtain -->
   <div class="curtain" id="curtain">
-    <video class="curtain__video" muted playsinline webkit-playsinline preload="auto" poster="assets/curtain-poster.jpg">
-      <source src="assets/bisiklet_animation.mp4" type="video/mp4">
+    <video class="curtain__video" muted playsinline webkit-playsinline preload="auto" poster="assets/curtain-poster.jpg" disablepictureinpicture>
+      <source src="assets/bisiklet_animation.mp4" data-desktop="assets/bisiklet_animation.mp4" data-mobile="assets/bisiklet_animation-mobile.mp4" type="video/mp4">
     </video>
+    <script>
+      (function() {
+        var source = document.querySelector('.curtain__video source');
+        if (window.innerWidth <= 768) {
+          source.setAttribute('src', source.getAttribute('data-mobile'));
+          source.parentElement.load();
+        }
+      })();
+    </script>
     <!-- Scroll hint -->
     <div class="curtain__hint" id="curtainHint">
       <div class="curtain__hint-arrow">
@@ -60,7 +69,7 @@
     <div class="hero__character" id="heroCharacter">
       <!-- 3D Character Video -->
       <div class="hero__video-wrap">
-        <video class="hero__video" autoplay muted loop playsinline webkit-playsinline poster="assets/hero-poster.jpg">
+        <video class="hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/hero-poster.jpg" disablepictureinpicture>
           <source src="assets/hero-character.mp4" data-desktop="assets/hero-character.mp4" data-mobile="assets/hero-character-mobile.mp4" type="video/mp4">
         </video>
         <script>
